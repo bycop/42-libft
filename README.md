@@ -1,4 +1,4 @@
-# libft
+# Libft
 My git repository for libft project at **42 school**
 
 Graded my Moulinette : **115%**
