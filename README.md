@@ -1,4 +1,4 @@
-# Libft
+# Libft (norme v2 + gnl)
 <p align="center"> 
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/bycop/42-libft">
 <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/bycop/42-libft">
