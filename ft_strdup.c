@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 13:44:54 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:14:05 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:32:55 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strdup(const char *src)
 	char	*str;
 	int		i;
 
-	if (!(str = malloc(sizeof(char) * (ft_strlen(src) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	if (!str)
 		return (NULL);
 	i = -1;
 	while (src[++i])

@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 14:32:55 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/25 00:54:20 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:20:05 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	len(long nb)
 	}
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	long	nbr;
@@ -39,7 +39,8 @@ char		*ft_itoa(int n)
 
 	nbr = n;
 	i = len(nbr);
-	if (!(str = malloc(sizeof(char) * (i + 1))))
+	str = malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (NULL);
 	str[i--] = '\0';
 	if (nbr == 0)
@@ -53,9 +54,6 @@ char		*ft_itoa(int n)
 		nbr = nbr * -1;
 	}
 	while (nbr > 0)
-	{
-		str[i--] = nbr % 10 + '0';
-		nbr /= 10;
-	}
+		(str[i--] = nbr % 10 + '0') && (nbr /= 10);
 	return (str);
 }

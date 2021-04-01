@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 13:46:47 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:14:21 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:34:25 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (to_find[i] == '\0')

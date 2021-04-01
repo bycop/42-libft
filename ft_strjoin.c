@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:59:07 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:14:07 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:33:11 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	if (!(res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!res)
 		return (NULL);
 	ft_memcpy(res, s1, ft_strlen(s1));
 	ft_memcpy(res + ft_strlen(s1), s2, ft_strlen(s2));

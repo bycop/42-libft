@@ -6,13 +6,13 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 13:46:09 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:12:41 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:09:58 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }

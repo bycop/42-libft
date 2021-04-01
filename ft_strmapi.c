@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 20:47:04 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:14:15 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:34:04 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	if (!(res = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	res = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!res)
 		return (NULL);
 	i = -1;
 	while (s[++i])

@@ -6,13 +6,13 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 21:56:08 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:13:25 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:15:20 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *p1, const void *p2, size_t size)
+int	ft_memcmp(const void *p1, const void *p2, size_t size)
 {
 	size_t	i;
 

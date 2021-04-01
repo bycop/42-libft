@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 21:09:10 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 13:31:33 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:15:58 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int nbr;
+	long int	nbr;
 
 	nbr = n;
 	if (nbr < 0)

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strljoinfree.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 13:46:53 by sfournio          #+#    #+#             */
-/*   Updated: 2021/03/19 10:34:46 by sfournio         ###   ########lyon.fr   */
+/*   Created: 2021/03/17 14:49:17 by sfournio          #+#    #+#             */
+/*   Updated: 2021/03/19 11:06:14 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int character)
+char	*ft_strljoinfree(char *s1, char *s2, int size)
 {
-	if (character >= 'a' && character <= 'z')
-		character -= 32;
-	return (character);
+	char	*res;
+
+	if (!s1 || !s2)
+		return (NULL);
+	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!res)
+		return (NULL);
+	ft_memcpy(res, s1, ft_strlen(s1));
+	ft_memcpy(res + ft_strlen(s1), s2, size);
+	res[ft_strlen(s1) + size] = '\0';
+	free(s1);
+	return (res);
 }

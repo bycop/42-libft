@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 22:19:23 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:13:17 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:13:52 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *list;
+	t_list	*list;
 
-	if (!(list = malloc(sizeof(t_list) * 1)))
+	list = malloc(sizeof(t_list) * 1);
+	if (!list)
 		return (NULL);
 	list->content = content;
 	list->next = NULL;

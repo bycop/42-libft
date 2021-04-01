@@ -6,13 +6,13 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 13:46:07 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/24 12:18:48 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:09:28 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	neg;

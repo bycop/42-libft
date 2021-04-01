@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 04:47:04 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/23 02:13:14 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:13:21 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*res;
 	t_list	*list;
 
-	if (!lst || !(list = ft_lstnew(f(lst->content))))
+	list = ft_lstnew(f(lst->content));
+	if (!lst || !list)
 		return (NULL);
 	res = list;
 	while (lst->next)
 	{
 		lst = lst->next;
-		if (!(list->next = ft_lstnew(f(lst->content))))
+		list->next = ft_lstnew(f(lst->content));
+		if (!list->next)
 		{
 			ft_lstclear(&res, del);
 			return (NULL);

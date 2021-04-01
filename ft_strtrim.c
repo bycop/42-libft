@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 18:56:48 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/25 00:55:48 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 12:53:02 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	is_charset(char const *set, char c)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (set[++i])
@@ -23,7 +23,7 @@ static int	is_charset(char const *set, char c)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 	int		i;
@@ -40,7 +40,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	while (is_charset(set, ((char *)s1)[len - 1]))
 		len--;
 	len = len - i;
-	if (!(res = malloc(sizeof(char) * (len + 1))))
+	res = malloc(sizeof(char) * (len + 1));
+	if (!res)
 		return (NULL);
 	j = -1;
 	while (j++ < len)

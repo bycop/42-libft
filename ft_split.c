@@ -6,7 +6,7 @@
 /*   By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 13:46:32 by sfournio          #+#    #+#             */
-/*   Updated: 2020/11/25 00:55:24 by sfournio         ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:32:02 by sfournio         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	freeall(char **res, int j)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i <= j)
@@ -30,7 +30,8 @@ static char	*wordcreate(char c, char const *s)
 	i = 0;
 	while (s[i] && c != s[i])
 		i++;
-	if (!(word = malloc(sizeof(char) * (i + 1))))
+	word = malloc(sizeof(char) * (i + 1));
+	if (!word)
 		return (NULL);
 	i = -1;
 	while (s[++i] && c != s[i])
@@ -41,8 +42,8 @@ static char	*wordcreate(char c, char const *s)
 
 static int	countword(char const *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -58,7 +59,17 @@ static int	countword(char const *s, char c)
 	return (count);
 }
 
-char		**ft_split(char const *s, char c)
+char	**extend(char **res, int j)
+{
+	if (res[j - 1] == NULL)
+	{
+		freeall(res, j - 1);
+		return (NULL);
+	}
+	return (res);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -66,7 +77,8 @@ char		**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s || !(res = malloc(sizeof(char *) * (countword(s, c) + 1))))
+	res = malloc(sizeof(char *) * (countword(s, c) + 1));
+	if (!s || !res)
 		return (NULL);
 	while (s[i])
 	{
@@ -74,11 +86,9 @@ char		**ft_split(char const *s, char c)
 			i++;
 		if (s[i] && c != s[i])
 		{
-			if ((res[j++] = wordcreate(c, &s[i])) == NULL)
-			{
-				freeall(res, j - 1);
+			res[j++] = wordcreate(c, &s[i]);
+			if (extend(res, j) == NULL)
 				return (NULL);
-			}
 			while (s[i] && c != s[i])
 				i++;
 		}

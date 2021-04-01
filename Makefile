@@ -6,7 +6,7 @@
 #    By: sfournio <sfournio@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/04 14:25:18 by sfournio          #+#    #+#              #
-#    Updated: 2020/11/25 01:45:42 by sfournio         ###   ########lyon.fr    #
+#    Updated: 2021/03/17 14:50:27 by sfournio         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS = 	ft_strlen.c ft_strdup.c \
 		ft_isdigit.c ft_isprint.c \
 		ft_split.c ft_toupper.c \
 		ft_strdup.c ft_putnbr_fd.c \
+		ft_strcmp.c \
 		ft_strncmp.c ft_tolower.c \
 		ft_strlcat.c ft_strlcpy.c \
 		ft_strrchr.c ft_strchr.c \
@@ -27,7 +28,9 @@ SRCS = 	ft_strlen.c ft_strdup.c \
 		ft_strjoin.c ft_substr.c \
 		ft_strtrim.c ft_strmapi.c \
 		ft_putchar_fd.c ft_putstr_fd.c \
-		ft_putendl_fd.c
+		ft_putendl_fd.c get_next_line.c \
+		ft_strjoinfree.c ft_strljoinfree.c \
+		ft_strljoin.c
 
 SRCBONUS = 	ft_lstnew.c ft_lstadd_front.c \
 			ft_lstsize.c ft_lstlast.c \
